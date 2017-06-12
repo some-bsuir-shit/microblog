@@ -3,48 +3,39 @@
 use yii\db\Migration;
 
 /**
- * Handles the creation of table `post`.
+ * Handles the creation of table `notification`.
  * Has foreign keys to the tables:
  *
  * - `user`
  */
-class m170610_130224_create_post_table extends Migration
+class m170611_115202_create_notification_table extends Migration
 {
     /**
      * @inheritdoc
      */
     public function up()
     {
-        $this->createTable('post', [
+        $this->createTable('notification', [
             'id' => $this->primaryKey(),
+            'title' => $this->string()->notNull(),
+            'text' => $this->text(),
             'user_id' => $this->integer()->notNull(),
-            'text' => $this->text()->notNull(),
             'created_at' => $this->dateTime()->notNull(),
-            'language_id' => $this->integer(),
         ]);
 
         // creates index for column `user_id`
         $this->createIndex(
-            'idx-post-user_id',
-            'post',
+            'idx-notification-user_id',
+            'notification',
             'user_id'
         );
 
         // add foreign key for table `user`
         $this->addForeignKey(
-            'fk-post-user_id',
-            'post',
+            'fk-notification-user_id',
+            'notification',
             'user_id',
             'user',
-            'id',
-            'CASCADE'
-        );
-
-        $this->addForeignKey(
-            'fk-post-language_id',
-            'post',
-            'language_id',
-            'language',
             'id',
             'CASCADE'
         );
@@ -57,16 +48,16 @@ class m170610_130224_create_post_table extends Migration
     {
         // drops foreign key for table `user`
         $this->dropForeignKey(
-            'fk-post-user_id',
-            'post'
+            'fk-notification-user_id',
+            'notification'
         );
 
         // drops index for column `user_id`
         $this->dropIndex(
-            'idx-post-user_id',
-            'post'
+            'idx-notification-user_id',
+            'notification'
         );
 
-        $this->dropTable('post');
+        $this->dropTable('notification');
     }
 }

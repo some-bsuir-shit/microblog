@@ -1,0 +1,102 @@
+@startuml
+
+City --> Country
+City --> RegistrationForm
+City --> User
+
+User --> UserService
+User --> SiteController
+Post --> SiteController
+Comment --> SiteController
+Subscription --> SiteController
+
+PostForm --> SiteController
+RegistrationForm --> SiteController
+LoginForm --> SiteController
+
+UserService --> SiteController
+
+
+class SiteController {
+    init()
+    behaviors()
+    actions()
+    actionIndex()
+    actionRegistration()
+    actionLogin()
+    actionLogout()
+    actionUserPosts()
+    actionDeletePost()
+}
+
+class UserService {
+    findById()
+    findByUsername()
+    register()
+}
+
+class User {
+    id
+    username
+    first_name
+    last_name
+    password
+    email
+    city_id
+}
+
+class City {
+    id
+    title
+    country_id
+}
+
+class Country {
+    id
+    title
+}
+
+class Post {
+    id
+    user_id
+    text
+    created_at
+}
+
+class Comment {
+    id
+    user_id
+    post_id
+    text
+    created_at
+}
+
+class Subscription {
+    id
+    user_id
+    subscriber_id
+    created_at
+}
+
+class PostForm {
+    text
+}
+
+class LoginForm {
+    username
+    login
+}
+
+class RegistrationForm {
+    id
+    username
+    first_name
+    last_name
+    password
+    repeatPassword
+    email
+    city_id
+}
+
+
+@enduml

@@ -4,6 +4,10 @@ namespace app\models\db;
 
 use Yii;
 
+use yii\db\Expression;
+use yii\behaviors\TimestampBehavior;
+
+
 /**
  * This is the model class for table "post".
  *
@@ -17,6 +21,19 @@ use Yii;
  */
 class Post extends \yii\db\ActiveRecord
 {
+
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => TimestampBehavior::className(),
+                'createdAtAttribute' => 'created_at',
+                'updatedAtAttribute' => false,
+                'value' => new Expression('NOW()'),
+            ],
+        ];
+    }
+
     /**
      * @inheritdoc
      */
@@ -31,7 +48,7 @@ class Post extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'text', 'created_at'], 'required'],
+            [['user_id', 'text'], 'required'],
             [['user_id'], 'integer'],
             [['text'], 'string'],
             [['created_at'], 'safe'],

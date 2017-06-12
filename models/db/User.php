@@ -66,6 +66,11 @@ class User extends \yii\db\ActiveRecord
         ];
     }
 
+    public function getUsername()
+    {
+        return $this->login;
+    }
+
     /**
      * @return \yii\db\ActiveQuery
      */
