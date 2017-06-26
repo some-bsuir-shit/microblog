@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d0ae91dd49c8a7d0b85d596e662463df",
+    "content-hash": "8568ca516f52dc67977535861b81f589",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -313,6 +313,63 @@
                 "html"
             ],
             "time": "2017-06-03T02:28:16+00:00"
+        },
+        {
+            "name": "npm-asset/onesignal-emoji-picker",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/OneSignal/emoji-picker.git",
+                "reference": "77c305623a7671835b46af2cbe3faad122d09813"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/OneSignal/emoji-picker/zipball/77c305623a7671835b46af2cbe3faad122d09813",
+                "reference": "77c305623a7671835b46af2cbe3faad122d09813",
+                "shasum": ""
+            },
+            "type": "npm-asset-library",
+            "extra": {
+                "npm-asset-bugs": "https://github.com/one-signal/emoji-picker/issues",
+                "npm-asset-files": [
+                    "lib",
+                    "LICENSE",
+                    "README.md",
+                    "screenshot.png"
+                ],
+                "npm-asset-main": "lib/js/emoji-picker.js",
+                "npm-asset-directories": {
+                    "lib": "./lib"
+                },
+                "npm-asset-repository": {
+                    "type": "git",
+                    "url": "https://github.com/one-signal/emoji-picker"
+                },
+                "npm-asset-engines": {
+                    "node": "0.10.x"
+                },
+                "branch-alias": {
+                    "dev-master": "1.1.4-dev"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Jason Pang @ OneSignal",
+                    "url": "https://onesignal.com"
+                }
+            ],
+            "description": "Add a slick emoji selector to input fields and textareas on your website.",
+            "homepage": "https://github.com/one-signal/emoji-picker",
+            "keywords": [
+                "emoji",
+                "emoticons",
+                "icons",
+                "input",
+                "jquery-emoji",
+                "jquery-plugin",
+                "textarea"
+            ],
+            "time": "2017-06-20 20:13:40"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -1684,16 +1741,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "6.2.1",
+            "version": "6.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "16999a1e9a8a25d68f0ab8cc8ab818b043ad5374"
+                "reference": "f2786490399836d2a544a34785c4a8d3ab32cf0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/16999a1e9a8a25d68f0ab8cc8ab818b043ad5374",
-                "reference": "16999a1e9a8a25d68f0ab8cc8ab818b043ad5374",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/f2786490399836d2a544a34785c4a8d3ab32cf0e",
+                "reference": "f2786490399836d2a544a34785c4a8d3ab32cf0e",
                 "shasum": ""
             },
             "require": {
@@ -1764,7 +1821,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-06-02T12:24:37+00:00"
+            "time": "2017-06-13T14:07:07+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -2085,16 +2142,16 @@
         },
         {
             "name": "sebastian/environment",
-            "version": "3.0.3",
+            "version": "3.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "02b6b2c7aefe2cdb1185b8dbf8718b0bcedf3ab3"
+                "reference": "74776f8dbc081cab9287c2a601c0c1d842568744"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/02b6b2c7aefe2cdb1185b8dbf8718b0bcedf3ab3",
-                "reference": "02b6b2c7aefe2cdb1185b8dbf8718b0bcedf3ab3",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/74776f8dbc081cab9287c2a601c0c1d842568744",
+                "reference": "74776f8dbc081cab9287c2a601c0c1d842568744",
                 "shasum": ""
             },
             "require": {
@@ -2131,7 +2188,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2017-05-18T10:10:00+00:00"
+            "time": "2017-06-20T16:25:05+00:00"
         },
         {
             "name": "sebastian/exporter",
@@ -3283,7 +3340,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "npm-asset/onesignal-emoji-picker": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

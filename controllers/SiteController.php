@@ -169,7 +169,7 @@ class SiteController extends Controller
     public function actionUserPosts($userId)
     {
         if ($user = User::findOne($userId)) {
-            $query = Post::find(['user_id' => $userId]);
+            $query = Post::find()->where(['user_id' => $userId]);
 
             $provider = new ActiveDataProvider([
                 'query' => $query,
@@ -196,5 +196,18 @@ class SiteController extends Controller
         }
 
         return $this->goBack();
+    }
+
+    public function actionUserList()
+    {
+        $query = User::find();
+
+        $provider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+
+        return $this->render('user-list', [
+            'provider' => $provider,
+        ]);
     }
 }

@@ -21,6 +21,10 @@ $this->title = 'Main Page';
             <?= \app\widgets\PostForm::widget([
                 'model' => $postForm,
             ]); ?>
+        <?php else: ?>
+            <div class="alert alert-warning">
+                Please, register or login for publishig posts
+            </div>
         <?php endif; ?>
 
         <div style="margin-top: 10px">

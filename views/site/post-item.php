@@ -9,10 +9,10 @@ use yii\helpers\Url;
         <h3 class="panel-title">
             <a href="<?= Url::to(['/site/user-posts', 'userId' => $model->user->id]) ?>">
                 <span class="glyphicon glyphicon-user"></span>
-                <?= $model->user->username ?>
+                <?= $model->user->name ?> (<?= $model->user->username ?>)
             </a>
 
-            <?php if (!Yii::$app->user->isGuest && $model->user->id === $model->user_id): ?>
+            <?php if (!Yii::$app->user->isGuest && Yii::$app->user->id === $model->user_id): ?>
                 <span class="pull-right label label-info">It's your post</span>
             <?php endif; ?>
         </h3>
@@ -27,7 +27,7 @@ use yii\helpers\Url;
                     <?= $model->created_at ?>
                 </div>
                 <div class="pull-right">
-                    <?php if (!Yii::$app->user->isGuest && $model->user->id === $model->user_id): ?>
+                    <?php if (!Yii::$app->user->isGuest && Yii::$app->user->id === $model->user_id): ?>
                         <a href="<?=Url::to(['/site/delete-post', 'id' => $model->id])?>" data-confirm="Are you sure you want to delete this item?" data-method="post">
                             <span class="glyphicon glyphicon-trash"></span>
                         </a>

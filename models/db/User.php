@@ -66,6 +66,11 @@ class User extends \yii\db\ActiveRecord
         ];
     }
 
+    public function getName()
+    {
+        return ucfirst(sprintf("%s %s", $this->first_name, $this->last_name));
+    }
+
     public function getUsername()
     {
         return $this->login;
