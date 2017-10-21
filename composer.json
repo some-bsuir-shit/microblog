@@ -5,6 +5,12 @@
     "homepage": "http://www.yiiframework.com/",
     "type": "project",
     "license": "BSD-3-Clause",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
     "support": {
         "issues": "https://github.com/yiisoft/yii2/issues?state=open",
         "forum": "http://www.yiiframework.com/forum/",
@@ -18,7 +24,8 @@
         "yiisoft/yii2": "~2.0.5",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0",
-        "npm-asset/onesignal-emoji-picker": "dev-master"
+        "bower-asset/emoji-picker": "~1.1",
+        "bower-asset/fontawesome": "^4.7"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
@@ -30,13 +37,7 @@
         "codeception/specify": "~0.4.3"
     },
     "config": {
-        "process-timeout": 1800,
-        "fxp-asset":{
-            "installer-paths": {
-                "npm-asset-library": "vendor/npm",
-                "bower-asset-library": "vendor/bower"
-            }
-        }
+        "process-timeout": 1800
     },
     "scripts": {
         "post-create-project-cmd": [

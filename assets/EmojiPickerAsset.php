@@ -7,8 +7,7 @@ use yii\web\AssetBundle;
 class EmojiPickerAsset extends AssetBundle
 {
 
-    public
-        $sourcePath = '@npm/onesignal-emoji-picker/lib';
+    public $sourcePath = '@bower/emoji-picker/lib';
 
     public $css = [
         'css/emoji.css',
@@ -23,6 +22,8 @@ class EmojiPickerAsset extends AssetBundle
 
     public $depends = [
         'app\assets\AppAsset',
+        'yii\bootstrap\BootstrapAsset',
+        'app\assets\FontAwesomeAsset',
     ];
 }
 
